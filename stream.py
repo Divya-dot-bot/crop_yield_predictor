@@ -1,7 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
-model=joblib.load("crop_yield.pkl")
+joblib.dump(model, "crop_yield.pkl", protocol=5)
 st.title("yield checking ")
 st.write("Enter the details below")
 
@@ -63,6 +63,7 @@ chart_df = pd.DataFrame({
 })
 
 st.bar_chart(chart_df.set_index("Metric"))
+
 
 
 
